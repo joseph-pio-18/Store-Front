@@ -1,0 +1,77 @@
+{
+  "doctype": "DocType",
+  "name": "Store Order Item",
+  "module": "Textile ERP",
+  "istable": 1,
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "item_code",
+    "item_name",
+    "variant_id",
+    "color",
+    "size",
+    "quantity",
+    "rate",
+    "amount"
+  ],
+  "fields": [
+    {
+      "fieldname": "item_code",
+      "fieldtype": "Link",
+      "label": "Product",
+      "options": "Textile Item",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "item_name",
+      "fieldtype": "Data",
+      "label": "Product Name",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "variant_id",
+      "fieldtype": "Data",
+      "label": "Variant ID",
+      "read_only": 1
+    },
+    {
+      "fieldname": "color",
+      "fieldtype": "Data",
+      "label": "Color",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "size",
+      "fieldtype": "Data",
+      "label": "Size",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "quantity",
+      "fieldtype": "Int",
+      "label": "Quantity",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "rate",
+      "fieldtype": "Currency",
+      "label": "Unit Price",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "amount",
+      "fieldtype": "Currency",
+      "label": "Amount",
+      "read_only": 1,
+      "in_list_view": 1
+    }
+  ],
+  "permissions": []
+}

@@ -1,0 +1,39 @@
+{
+  "doctype": "DocType",
+  "name": "Textile Item Variant",
+  "module": "Textile ERP",
+  "istable": 1,
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "color",
+    "size",
+    "available_qty"
+  ],
+  "fields": [
+    {
+      "fieldname": "color",
+      "fieldtype": "Data",
+      "label": "Color",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "size",
+      "fieldtype": "Data",
+      "label": "Size",
+      "description": "Use a standard size (XS, S, M, L, XL, XXL) or enter a custom size.",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "available_qty",
+      "fieldtype": "Int",
+      "label": "Available Quantity",
+      "default": "0",
+      "reqd": 1,
+      "in_list_view": 1
+    }
+  ],
+  "permissions": []
+}

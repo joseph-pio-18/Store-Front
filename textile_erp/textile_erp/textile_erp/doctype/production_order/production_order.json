@@ -1,0 +1,110 @@
+{
+  "doctype": "DocType",
+  "name": "Production Order",
+  "module": "Textile ERP",
+  "autoname": "naming_series:",
+  "is_submittable": 1,
+  "engine": "InnoDB",
+  "track_changes": 1,
+  "field_order": [
+    "naming_series",
+    "finished_product",
+    "material_formula",
+    "qty_to_produce",
+    "status",
+    "planned_start_date",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "naming_series",
+      "fieldtype": "Select",
+      "label": "Series",
+      "options": "MFG-.YYYY.-.#####",
+      "default": "MFG-.YYYY.-.#####",
+      "reqd": 1
+    },
+    {
+      "fieldname": "finished_product",
+      "fieldtype": "Link",
+      "label": "Finished Product",
+      "options": "Textile Item",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "material_formula",
+      "fieldtype": "Link",
+      "label": "Material Formula",
+      "options": "Material Formula",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "qty_to_produce",
+      "fieldtype": "Float",
+      "label": "Quantity to Produce",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Draft\nCompleted\nCancelled",
+      "default": "Draft",
+      "read_only": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "planned_start_date",
+      "fieldtype": "Date",
+      "label": "Planned Start Date"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1,
+      "amend": 1,
+      "report": 1
+    },
+    {
+      "role": "Textile Admin",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1,
+      "amend": 1,
+      "report": 1
+    },
+    {
+      "role": "Production Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "submit": 1,
+      "cancel": 1,
+      "amend": 1,
+      "report": 1
+    },
+    {
+      "role": "Inventory Manager",
+      "read": 1,
+      "report": 1
+    }
+  ]
+}

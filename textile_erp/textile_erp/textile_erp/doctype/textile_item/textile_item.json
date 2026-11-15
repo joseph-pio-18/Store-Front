@@ -1,0 +1,154 @@
+{
+  "doctype": "DocType",
+  "name": "Textile Item",
+  "module": "Textile ERP",
+  "autoname": "field:item_code",
+  "engine": "InnoDB",
+  "track_changes": 1,
+  "field_order": [
+    "item_code",
+    "item_name",
+    "item_type",
+    "stock_uom",
+    "disabled",
+    "section_break_website",
+    "product_category",
+    "selling_price",
+    "publish_on_website",
+    "website_image",
+    "website_description",
+    "section_break_variants",
+    "colors",
+    "variants"
+  ],
+  "fields": [
+    {
+      "fieldname": "item_code",
+      "fieldtype": "Data",
+      "label": "Item Code",
+      "reqd": 1,
+      "unique": 1
+    },
+    {
+      "fieldname": "item_name",
+      "fieldtype": "Data",
+      "label": "Item Name",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "item_type",
+      "fieldtype": "Select",
+      "label": "Item Type",
+      "options": "Raw Material\nFinished Product",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "stock_uom",
+      "fieldtype": "Data",
+      "label": "Stock Unit",
+      "reqd": 1
+    },
+    {
+      "fieldname": "disabled",
+      "fieldtype": "Check",
+      "label": "Disabled",
+      "default": "0"
+    },
+    {
+      "fieldname": "section_break_website",
+      "fieldtype": "Section Break",
+      "label": "Web Store"
+    },
+    {
+      "fieldname": "product_category",
+      "fieldtype": "Select",
+      "label": "Audience Category",
+      "options": "Women\nMen\nKids",
+      "depends_on": "eval:doc.item_type === 'Finished Product'",
+      "mandatory_depends_on": "eval:doc.item_type === 'Finished Product' && doc.publish_on_website"
+    },
+    {
+      "fieldname": "selling_price",
+      "fieldtype": "Currency",
+      "label": "Selling Price",
+      "default": "0",
+      "depends_on": "eval:doc.item_type === 'Finished Product'"
+    },
+    {
+      "fieldname": "publish_on_website",
+      "fieldtype": "Check",
+      "label": "Publish on Website",
+      "default": "0",
+      "depends_on": "eval:doc.item_type === 'Finished Product'"
+    },
+    {
+      "fieldname": "website_image",
+      "fieldtype": "Attach Image",
+      "label": "Product Image"
+    },
+    {
+      "fieldname": "website_description",
+      "fieldtype": "Small Text",
+      "label": "Website Description",
+      "depends_on": "eval:doc.item_type === 'Finished Product'"
+    },
+    {
+      "fieldname": "section_break_variants",
+      "fieldtype": "Section Break",
+      "label": "Product Options",
+      "depends_on": "eval:doc.item_type === 'Finished Product'"
+    },
+    {
+      "fieldname": "colors",
+      "fieldtype": "Table",
+      "label": "Colors and Images",
+      "options": "Textile Item Color",
+      "depends_on": "eval:doc.item_type === 'Finished Product'"
+    },
+    {
+      "fieldname": "variants",
+      "fieldtype": "Table",
+      "label": "Size and Color Stock",
+      "options": "Textile Item Variant",
+      "depends_on": "eval:doc.item_type === 'Finished Product'"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "export": 1,
+      "report": 1,
+      "share": 1
+    },
+    {
+      "role": "Textile Admin",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "export": 1,
+      "report": 1,
+      "share": 1
+    },
+    {
+      "role": "Inventory Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "export": 1,
+      "report": 1
+    },
+    {
+      "role": "Production Manager",
+      "read": 1,
+      "report": 1
+    }
+  ]
+}

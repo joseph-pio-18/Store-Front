@@ -1,0 +1,28 @@
+{
+  "doctype": "DocType",
+  "name": "Textile Item Color",
+  "module": "Textile ERP",
+  "istable": 1,
+  "editable_grid": 1,
+  "engine": "InnoDB",
+  "field_order": [
+    "color",
+    "image"
+  ],
+  "fields": [
+    {
+      "fieldname": "color",
+      "fieldtype": "Data",
+      "label": "Color",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "image",
+      "fieldtype": "Attach Image",
+      "label": "Color Image",
+      "in_list_view": 1
+    }
+  ],
+  "permissions": []
+}

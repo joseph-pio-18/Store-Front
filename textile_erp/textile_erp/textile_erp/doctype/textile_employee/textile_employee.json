@@ -1,0 +1,112 @@
+{
+  "doctype": "DocType",
+  "name": "Textile Employee",
+  "module": "Textile ERP",
+  "autoname": "field:employee_code",
+  "engine": "InnoDB",
+  "track_changes": 1,
+  "field_order": [
+    "employee_code",
+    "full_name",
+    "user",
+    "department",
+    "designation",
+    "date_of_joining",
+    "employment_status",
+    "work_email",
+    "phone"
+  ],
+  "fields": [
+    {
+      "fieldname": "employee_code",
+      "fieldtype": "Data",
+      "label": "Employee Code",
+      "reqd": 1,
+      "unique": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "full_name",
+      "fieldtype": "Data",
+      "label": "Full Name",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "user",
+      "fieldtype": "Link",
+      "label": "System User",
+      "options": "User",
+      "unique": 1
+    },
+    {
+      "fieldname": "department",
+      "fieldtype": "Link",
+      "label": "Department",
+      "options": "Textile Department",
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "designation",
+      "fieldtype": "Data",
+      "label": "Designation"
+    },
+    {
+      "fieldname": "date_of_joining",
+      "fieldtype": "Date",
+      "label": "Date of Joining"
+    },
+    {
+      "fieldname": "employment_status",
+      "fieldtype": "Select",
+      "label": "Employment Status",
+      "options": "Active\nOn Leave\nInactive",
+      "default": "Active",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "work_email",
+      "fieldtype": "Data",
+      "label": "Work Email"
+    },
+    {
+      "fieldname": "phone",
+      "fieldtype": "Data",
+      "label": "Work Phone"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "export": 1,
+      "report": 1
+    },
+    {
+      "role": "Textile Admin",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "export": 1,
+      "report": 1
+    },
+    {
+      "role": "HR Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "export": 1,
+      "report": 1
+    },
+    {
+      "role": "Textile Employee",
+      "read": 1
+    }
+  ]
+}

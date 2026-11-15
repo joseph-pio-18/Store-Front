@@ -1,0 +1,96 @@
+{
+  "doctype": "DocType",
+  "name": "Employee Attendance",
+  "module": "Textile ERP",
+  "autoname": "hash",
+  "engine": "InnoDB",
+  "track_changes": 1,
+  "field_order": [
+    "employee",
+    "attendance_date",
+    "status",
+    "shift",
+    "in_time",
+    "out_time",
+    "notes"
+  ],
+  "fields": [
+    {
+      "fieldname": "employee",
+      "fieldtype": "Link",
+      "label": "Employee",
+      "options": "Textile Employee",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "attendance_date",
+      "fieldtype": "Date",
+      "label": "Attendance Date",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "status",
+      "fieldtype": "Select",
+      "label": "Status",
+      "options": "Present\nAbsent\nOn Leave",
+      "reqd": 1,
+      "in_list_view": 1
+    },
+    {
+      "fieldname": "shift",
+      "fieldtype": "Data",
+      "label": "Shift"
+    },
+    {
+      "fieldname": "in_time",
+      "fieldtype": "Time",
+      "label": "In Time"
+    },
+    {
+      "fieldname": "out_time",
+      "fieldtype": "Time",
+      "label": "Out Time"
+    },
+    {
+      "fieldname": "notes",
+      "fieldtype": "Small Text",
+      "label": "Notes"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "System Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "export": 1,
+      "report": 1
+    },
+    {
+      "role": "Textile Admin",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "export": 1,
+      "report": 1
+    },
+    {
+      "role": "HR Manager",
+      "read": 1,
+      "write": 1,
+      "create": 1,
+      "delete": 1,
+      "export": 1,
+      "report": 1
+    },
+    {
+      "role": "Textile Employee",
+      "read": 1,
+      "create": 1
+    }
+  ]
+}
